@@ -1,0 +1,23 @@
+{% extends 'website/based.html' %}
+
+{% block title %} Create Product {% endblock %}
+
+{% block content %}
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Create Product</h1>
+        <!-- <a href="{% url 'product:create-product.product' %}" class="float-right btn btn-primary my-1">All Product</a> -->
+    </div>
+
+
+    <script>
+        var variants = {{ variants|safe }}
+        console.log(typeof variants);
+    </script>
+    
+      
+
+    <div id="root">
+        <CreateProduct id="variants" data-variants="{{ variants|safe }}"></CreateProduct>
+    </div>
+
+{% endblock %}
